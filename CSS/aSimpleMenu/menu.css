@@ -1,4 +1,5 @@
 html, body, button, h1 {
+    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -21,27 +22,24 @@ html, body, button, h1 {
     flex: 1;
 }
 
-.toBlue {
+.toBlack, .toBlue{
     -webkit-transition: all linear 1s;
     -moz-transition: all linear 1s;
     -ms-transition: all linear 1s;
     -o-transition: all linear 1s;
     transition: all linear 1s;
+}
+
+.toBlue {
     color: blue;
 }
 
 .toBlack {
-    -webkit-transition: all linear 1s;
-    -moz-transition: all linear 1s;
-    -ms-transition: all linear 1s;
-    -o-transition: all linear 1s;
-    transition: all linear 1s;
     color: black;
 }
 
 .line {
     height: 20px;
-
 }
 
 .left, .right {
@@ -70,54 +68,29 @@ html, body, button, h1 {
     background-color: white;
 }
 
-/*.line-left:hover {
-    -webkit-transition: all linear 1s;
-    -moz-transition: all linear 1s;
-    -ms-transition: all linear 1s;
-    -o-transition: all linear 1s;
-    transition: width linear 5s;
-    width: 0;
-}
-
-.line-right:hover {
-    transition: width linear 5s;
-    width: 100%;
-
-}*/
-.left-transition{
+.left-transition, .right-transition, .left-reverse, .right-reverse{
     -webkit-transition: all linear 1s;
     -moz-transition: all linear 1s;
     -ms-transition: all linear 1s;
     -o-transition: all linear 1s;
     transition: all linear 1s;
+}
+
+
+.left-transition{
     width: 0;
 }
 
 
 .right-transition{
-    -webkit-transition: all linear 1s;
-    -moz-transition: all linear 1s;
-    -ms-transition: all linear 1s;
-    -o-transition: all linear 1s;
-    transition: all linear 1s;
     width: 100%;
 }
 
 .left-reverse{
-    -webkit-transition: all linear 1s;
-    -moz-transition: all linear 1s;
-    -ms-transition: all linear 1s;
-    -o-transition: all linear 1s;
-    transition: all linear 1s;
     width: 100%;
 }
 
 .right-reverse{
-    -webkit-transition: all linear 1s;
-    -moz-transition: all linear 1s;
-    -ms-transition: all linear 1s;
-    -o-transition: all linear 1s;
-    transition: all linear 1s;
     width: 0;
 }
 

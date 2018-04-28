@@ -3,7 +3,7 @@ var button = document.getElementById('button'),
     leftLine = document.getElementById('line-left'),
     rightLine = document.getElementById('line-right');
 
-button.addEventListener('click',function () {
+addEvent(button,'click',function () {
     if(hasClass(leftLine, 'left-transition')){
         removeClass(leftLine, 'left-transition');
         removeClass(rightLine, 'right-transition');
@@ -25,12 +25,18 @@ button.addEventListener('click',function () {
 });
 
 
-
+/*
+* 检查是否存在某个class
+* */
 function hasClass(ele, strClass) {
     var reg = new RegExp('(^| +)'+ strClass +'( +|$)');
     return reg.test(ele.className);
 }
 
+
+/*
+* 添加class
+* */
 function addClass(ele, strClass) {
     var classAry = strClass.replace(/^ +| +$/g,'').split(/ +/g); //strClass = [c2,c3]
     for(var i = 0; i<classAry.length; i++){
@@ -41,6 +47,9 @@ function addClass(ele, strClass) {
     }
 }
 
+/*
+*移除class
+* */
 function removeClass(ele, strClass) {
     var classAry = strClass.replace(/^ +| +$/g,'').split(/ +/g);
     for (var i=0; i<classAry.length; i++){
@@ -49,6 +58,20 @@ function removeClass(ele, strClass) {
             var reg = new RegExp('(^| +)'+ curClass+ '( +|$)','g');
             ele.className = ele.className.replace(reg,' ');
         }
+    }
+}
+
+
+/*
+* 添加监听事件
+* */
+function addEvent(ele, type, handler) {
+    if(ele.addEventListener){
+        ele.addEventListener(type, handler, false);
+    }else if(ele.attachEvent){
+        ele.attachEvent('on' + type, handler);
+    }else{
+        ele['on' + type] = handler;
     }
 }
 
