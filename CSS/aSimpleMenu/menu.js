@@ -27,15 +27,18 @@ addEvent(button,'click',function () {
 
 /*
 * 检查是否存在某个class
+* ele 要被查询元素
+* strClass 查询class的名称，为string类型
 * */
 function hasClass(ele, strClass) {
     var reg = new RegExp('(^| +)'+ strClass +'( +|$)');
     return reg.test(ele.className);
 }
 
-
 /*
 * 添加class
+* ele 要添加的元素
+* 添加元素的名称，可以为以空格分开的多个class，为string
 * */
 function addClass(ele, strClass) {
     var classAry = strClass.replace(/^ +| +$/g,'').split(/ +/g); //strClass = [c2,c3]
@@ -48,7 +51,9 @@ function addClass(ele, strClass) {
 }
 
 /*
-*移除class
+* 移除class
+* 要被移除class的元素
+* 要移除的class名称，需要为string类型，可以为单一class，也可以为多个以空格个分隔开的sting
 * */
 function removeClass(ele, strClass) {
     var classAry = strClass.replace(/^ +| +$/g,'').split(/ +/g);
